@@ -1,26 +1,34 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Profile</title>
-</head>
-<body>
+{{--
+    @extends('layouts.app')
+    ・「私はlayouts/app.blade.phpを土台として使います」という宣言
+    ・これを書くだけで、app.blade.phpのHTML骨格を丸ごと継承できる
+    ・ファイルパスは resources/views/layouts/app.blade.php を指している
+--}}
+@extends('layouts.app')
+
+{{-- @yield('title') の穴に差し込む値 --}}
+@section('title', 'プロフィールページ')
+
+{{-- @yield('content') の穴に入れる中身のかたまりここから --}}
+@section('content')
     <h1>Profile</h1>
+
     <h2>ようこそ{{ $name }}さん!</h2>
+
     {{-- ユーザーが管理者か判断 --}}
     @if ($is_admin)
         <p>あなたは管理者です</p>
     @else
         <p>あなたは一般pepleです</p>
     @endif
+
     {{-- skillsの数分ループで回す --}}
     <ul>
         @foreach ($skills as $skill)
             <li>{{ $skill }}</li>
         @endforeach
     </ul>
+
     {{-- Laravelの認証機能と連動  ログイン状態なら表示 --}}
     @auth
         <p>ログイン中です</p>
@@ -29,5 +37,4 @@
     @guest
         <button>ログイン</button>
     @endguest
-</body>
-</html>
+@endsection {{-- @section('content') の終わり --}}
