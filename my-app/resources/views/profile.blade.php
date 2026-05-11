@@ -38,3 +38,5 @@
         <button>ログイン</button>
     @endguest
 @endsection {{-- @section('content') の終わり --}}
+
+<x-alert></x-alert>
