@@ -39,4 +39,10 @@
     @endguest
 @endsection {{-- @section('content') の終わり --}}
 
-<x-alert></x-alert>
+
+<x-alert bg="bg-gray-800" role="alert">
+    Test
+    <x-slot:title>
+        Light
+    </x-slot:title>
+</x-alert>

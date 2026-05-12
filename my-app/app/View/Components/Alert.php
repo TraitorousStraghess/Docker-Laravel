@@ -8,12 +8,16 @@ use Illuminate\View\Component;
 
 class Alert extends Component
 {
+    public string $bg;
+    public string $role;
     /**
      * Create a new component instance.
      */
-    public function __construct()
+    public function __construct(
+        string $bg = "bg-gray-800", string $role = "alert")
     {
-        //
+        $this->bg = $bg;
+        $this->role = $role;
     }
 
     /**
