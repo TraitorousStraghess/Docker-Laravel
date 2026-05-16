@@ -1,0 +1,22 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class Post extends Model
+{
+    use HasFactory;
+
+    protected $fillable = [
+        'title',
+        'body',
+        'user_id',
+    ];
+
+    // リレーション設定 Userに紐づけたい
+    public function user() {
+        return $this->belongTo(User::class);  //PostからUserで1対1の関係になる
+    }
+}

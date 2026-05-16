@@ -37,6 +37,10 @@
     @guest
         <button>ログイン</button>
     @endguest
+
+    {{-- 画像はpublicに格納しないといけない --}}
+    <img src="{{ asset('images\IMG_2217.jpg') }}" alt="">
+
 @endsection {{-- @section('content') の終わり --}}
 
 

@@ -29,4 +29,9 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    // リレーション設定 Postに紐づけたい
+    public function post() {
+        return $this->hasMany(Post::class);  // UserからPostに1対多の関係になる
+    }
 }

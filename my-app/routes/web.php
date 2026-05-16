@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -21,3 +22,5 @@ Route::get('/profile', function () {
         'skills' => $skills
     ]);
 });
+
+Route::get('/posts', [PostController::class, 'index']);
