@@ -16,7 +16,7 @@ return new class extends Migration
             $table->id()->primary();
             $table->timestamps();
             $table->string('title');
-            $table->string('body');
+            $table->text('body');
             // usersテーブルと紐づけ、紐付いたユーザー(users)が削除されたら、投稿(post)も自動で一緒に削除される
             $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
         });
