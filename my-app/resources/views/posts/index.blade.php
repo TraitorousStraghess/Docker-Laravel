@@ -15,9 +15,10 @@
 
     @forelse ($posts as $post)
         <article>
-            <h3>{{ $post['title'] }}</h3>
-            <p>{{ $post['body'] }}</p>
+            <h3>{{ $post->title }}</h3>
+            <p>{{ Str::limit($post->body, 100) }}</p>
         </article>
+        <br>
     @empty
         <p>記事はまだ一件もありません</p>
     @endforelse

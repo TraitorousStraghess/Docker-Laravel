@@ -17,6 +17,6 @@ class Post extends Model
 
     // リレーション設定 Userに紐づけたい
     public function user() {
-        return $this->belongTo(User::class);  //PostからUserで1対1の関係になる
+        return $this->belongsTo(User::class);  //PostからUserで1対1の関係になる
     }
 }
