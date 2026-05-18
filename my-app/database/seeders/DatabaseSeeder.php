@@ -18,12 +18,14 @@ class DatabaseSeeder extends Seeder
     {
         // User::factory(10)->create();
 
+        // テストユーザーを1人作る
         $user = User::factory()->create([
             'name' => 'Test User',
             'email' => 'test@example.com',
-            'password' => bcrypt('password')
+            'password' => bcrypt('password'),  // パスワードは暗号化して保存
         ]);
 
+        // そのユーザーの投稿を20件作る
         Post::factory()
             ->count(20)
             ->create([
